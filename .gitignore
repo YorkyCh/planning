@@ -1,0 +1,6 @@
+__pycache__/
+node_modules/
+.planify/
+planify/
+projects.db
+.DS_Store
