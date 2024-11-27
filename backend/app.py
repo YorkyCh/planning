@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory
 import os
-from routes import project_bp
+from routes import project_bp, task_bp
 
 app = Flask(__name__, static_folder="frontend/build")
 
@@ -9,10 +9,10 @@ if not os.path.exists('projects.db'):
     from db import create_database
     create_database()
     print("DB created!")
-    
+
 # Register blueprints
 app.register_blueprint(project_bp)
-# app.register_blueprint(task_bp)
+app.register_blueprint(task_bp)
 # app.register_blueprint(file_bp)
 
 

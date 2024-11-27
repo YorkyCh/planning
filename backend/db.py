@@ -16,6 +16,7 @@ def create_database():
         CREATE TABLE IF NOT EXISTS tasks (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             description TEXT,
+            name TEXT,
             project_id INTEGER,
             FOREIGN KEY (project_id) REFERENCES projects (id) ON DELETE CASCADE
         )
